@@ -1,0 +1,3 @@
+#!/bin/bash
+
+dnx test/HelloMvc.Tests test

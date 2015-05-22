@@ -1,0 +1,3 @@
+#!/bin/bash
+
+dnx src/HelloMvc kestrel
