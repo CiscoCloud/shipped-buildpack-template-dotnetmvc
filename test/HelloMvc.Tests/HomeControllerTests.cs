@@ -22,7 +22,7 @@ namespace HelloMvc.Tests
         {
             var result = _homeController.Index() as ViewResult;
             var model = result.ViewData.Model as User;
-            Assert.Null(model);
+            Assert.NotNull(model);
         }
     }
 }
