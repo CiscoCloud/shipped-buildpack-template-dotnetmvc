@@ -1,3 +1,4 @@
+using HelloMvc.Core;
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 
@@ -7,6 +8,8 @@ namespace HelloMvc
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInstance<ITodoRepository>(new TodoRepository());
+
             services.AddMvc();
         }
 
