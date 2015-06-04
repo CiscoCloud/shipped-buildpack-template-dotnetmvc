@@ -9,20 +9,14 @@ namespace HelloMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInstance<ITodoRepository>(new TodoRepository());
-
             services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseErrorPage();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            app.UseWelcomePage();
-        }
+            
+            app.UseMvcWithDefaultRoute();
+            app.UseWelcomePage();        }
     }
 }
