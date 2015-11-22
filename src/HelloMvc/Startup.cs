@@ -1,6 +1,6 @@
 using HelloMvc.Core;
 using Microsoft.AspNet.Builder;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HelloMvc
 {
@@ -15,14 +15,13 @@ namespace HelloMvc
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseErrorPage();
+           
+            app.UseDeveloperExceptionPage();
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("default", "{controller}/{action}/{id?}", new { controller = "Home", action = "Index" });
             });
-
-            app.UseWelcomePage();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace HelloMvc.Controllers.Api
         {
             if (!ModelState.IsValid)
             {
-                Context.Response.StatusCode = 400;
+                Response.StatusCode = 400;
                 return;
             }
 
